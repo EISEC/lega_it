@@ -1,13 +1,14 @@
 import React from 'react';
 import Image from "next/image";
+import BootonHoverGreen from "@/components/ui/bootonHoverGreen";
 
 const Section1 = () => {
     return (
         <section className={'container mx-auto'}>
-            <div className={'h-[640px] w-7/12 absolute right-0 top-0 -z-10'}>
+            <div className={'h-[85vh] w-6/12 absolute right-0 top-0 -z-10'}>
                 <Image src={'/fon_voda.webp'} objectFit={'true'} alt={'kakrtinka'} fill/>
             </div>
-            <div className={'flex flex-col gap-4 justify-center h-full relative min-h-[680px]'}>
+            <div className={'flex flex-col gap-4 justify-center h-full relative h-[85vh]'}>
                 <h1 className={'text-7xl'}>
                     Современная упаковка <br/>
                     твоего бизнеса
@@ -20,14 +21,13 @@ const Section1 = () => {
                     соцсетях. Мы точно знаем, как привлечь новых клиентов
                     и увеличить продажи.
                 </p>
-                <button
-                    className={'max-w-[230px] text-xl border-[1px] border-green py-4 text-green rounded-lg mt-8 transition-all ease-in hover:bg-green hover:text-black'}>
-                    Задай вопрос
-                </button>
-                <button className={'relative h-[42px] w-[50px] mx-auto py-2 mt-5'}>
-                    <Image className={'transition-all animate-bounce'} src={'/palec.svg'} alt={'palec'}
-                           objectFit={'true'} fill/>
-                </button>
+                <BootonHoverGreen name={'Задай вопрос'} action={null}/>
+                <div className={'absolute bottom-10 left-0 right-0 text-center'}>
+                    <button className={'relative h-[42px] w-[50px] mx-auto py-2'}>
+                        <Image className={'transition-all animate-bounce'} src={'/palec.svg'} alt={'palec'}
+                               objectFit={'true'} fill/>
+                    </button>
+                </div>
             </div>
         </section>
     );
