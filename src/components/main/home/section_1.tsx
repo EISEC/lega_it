@@ -8,7 +8,7 @@ const Section1 = () => {
             <div className={'h-[85vh] w-6/12 absolute right-0 top-0 -z-10'}>
                 <Image src={'/fon_voda.webp'} objectFit={'true'} alt={'kakrtinka'} fill/>
             </div>
-            <div className={'flex flex-col gap-4 justify-center h-full relative h-[85vh]'}>
+            <div className={'flex flex-col gap-4 justify-center relative h-[85vh]'}>
                 <h1 className={'text-7xl'}>
                     Современная упаковка <br/>
                     твоего бизнеса
