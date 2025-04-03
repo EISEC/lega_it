@@ -1,0 +1,11 @@
+.d16 {
+    margin: 20px 0;
+    width: 100%;
+    height: 326px;
+    background: url('./hex_black.svg');
+}
+.block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}

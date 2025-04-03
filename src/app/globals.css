@@ -31,3 +31,120 @@ body {
     text-wrap: balance;
   }
 }
+
+.hexagon-container {
+  width: 120px;
+  height: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hexagon {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s;
+  max-width: 216px;
+  max-height: 247px;
+  height: 45vh;
+  width: 45vw;
+  margin: -16px;
+}
+
+.hexagon:hover {
+  background-color: #bef264;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  color: black;
+}
+.hexagon-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  width: fit-content;
+  align-items: center;
+  justify-items: center;
+}
+.clip-hex {
+  max-width: 215px;
+  max-height: 246px;
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  margin: auto;
+  background: #AAFF00;
+}
+
+@media (min-width: 768px) {
+  .hexagon-grid .div2,
+  .hexagon-grid .div3,
+  .hexagon-grid .div4,
+  .hexagon-grid .div8{
+    background: #AAFF00;
+  }
+  .hexagon-grid .div1,
+  .hexagon-grid .div5,
+  .hexagon-grid .div6,
+  .hexagon-grid .div7{
+    background: black;
+  }
+  .hexagon-grid .div2 {
+    grid-column-start: 1;
+    grid-row-start: 2;
+  }
+  .hexagon-grid .div2 .clip-hex,
+  .hexagon-grid .div3 .clip-hex,
+  .hexagon-grid .div4 .clip-hex,
+  .hexagon-grid .div8 .clip-hex {
+    background: black;
+  }
+  .hexagon-grid .div2 div,
+  .hexagon-grid .div3 div,
+  .hexagon-grid .div4 div,
+  .hexagon-grid .div8 div {
+    color: #AAFF00;
+  }
+
+  .hexagon-grid .div3 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+
+  .hexagon-grid .div4 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+  }
+
+  .hexagon-grid .div5 {
+    grid-column-start: 3;
+    grid-row-start: 2;
+  }
+
+  .hexagon-grid .div6 {
+    grid-row: span 2 / span 2;
+    grid-column-start: 4;
+    grid-row-start: 1;
+  }
+
+  .hexagon-grid .div7 {
+    grid-column-start: 5;
+    grid-row-start: 1;
+  }
+
+  .hexagon-grid .div8 {
+    grid-column-start: 5;
+  }
+}
+
+@media (max-width: 768px) {
+  .hexagon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

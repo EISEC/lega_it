@@ -6,7 +6,7 @@ const Section1 = () => {
     return (
         <section className={'container mx-auto'}>
             <div className={'h-[85vh] w-6/12 absolute right-0 top-0 -z-10'}>
-                <Image src={'/fon_voda.webp'} objectFit={'true'} alt={'kakrtinka'} fill/>
+                <Image src={'/fon_voda.svg'} objectFit={'true'} alt={'kakrtinka'} fill/>
             </div>
             <div className={'flex flex-col gap-4 justify-center relative h-[85vh]'}>
                 <h1 className={'text-7xl'}>
