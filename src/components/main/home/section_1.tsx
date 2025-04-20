@@ -9,16 +9,16 @@ const Section1 = () => {
                 <Image src={'/fon_voda.svg'} objectFit={'true'} alt={'kakrtinka'} fill/>
             </div>
             <div className={'flex flex-col gap-4 justify-center relative h-[85vh]'}>
-                <h1 className={'text-7xl'}>
+                <h1>
                     Современная упаковка <br/>
                     твоего бизнеса
                 </h1>
                 <div>
                     <Image src={'/path.webp'} width={300} height={8} alt={'kakrtinka'}/>
                 </div>
-                <p className={'w-3/5 text-stone text-[20px]'}>
-                    Комплексная прокачка бизнеса: от дизайна и разработки сайта до продвижения в поисковых системах и
-                    соцсетях. Мы точно знаем, как привлечь новых клиентов
+                <p className={'w-4/5 text-stone text-[20px] font-light'}>
+                    Комплексная прокачка бизнеса: от дизайна и разработки сайта до продвижения в поисковых системах и <br/>
+                    соцсетях. Мы точно знаем, как привлечь новых клиентов <br/>
                     и увеличить продажи.
                 </p>
                 <BootonHoverGreen name={'Задай вопрос'} action={null}/>

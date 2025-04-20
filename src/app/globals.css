@@ -2,149 +2,557 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Ultralight.eot');
+    src: local('Neue Machina Ultralight'), local('NeueMachina-Ultralight'),
+    url('/fonts/NeueMachina-Ultralight.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Ultralight.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Ultralight.woff') format('woff'),
+    url('/fonts/NeueMachina-Ultralight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Light.eot');
+    src: local('Neue Machina Light'), local('NeueMachina-Light'),
+    url('/fonts/NeueMachina-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Light.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Light.woff') format('woff'),
+    url('/fonts/NeueMachina-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Black.eot');
+    src: local('Neue Machina Black'), local('NeueMachina-Black'),
+    url('/fonts/NeueMachina-Black.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Black.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Black.woff') format('woff'),
+    url('/fonts/NeueMachina-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Regular.eot');
+    src: local('Neue Machina Regular'), local('NeueMachina-Regular'),
+    url('/fonts/NeueMachina-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Regular.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Regular.woff') format('woff'),
+    url('/fonts/NeueMachina-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Bold.eot');
+    src: local('Neue Machina Bold'), local('NeueMachina-Bold'),
+    url('/fonts/NeueMachina-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Bold.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Bold.woff') format('woff'),
+    url('/fonts/NeueMachina-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Medium.eot');
+    src: local('Neue Machina Medium'), local('NeueMachina-Medium'),
+    url('/fonts/NeueMachina-Medium.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Medium.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Medium.woff') format('woff'),
+    url('/fonts/NeueMachina-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('/fonts/NeueMachina-Ultrabold.eot');
+    src: local('Neue Machina Ultrabold'), local('NeueMachina-Ultrabold'),
+    url('/fonts/NeueMachina-Ultrabold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/NeueMachina-Ultrabold.woff2') format('woff2'),
+    url('/fonts/NeueMachina-Ultrabold.woff') format('woff'),
+    url('/fonts/NeueMachina-Ultrabold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-BoldItalic.eot');
+    src: local('Panton Bold Italic'), local('Panton-BoldItalic'),
+    url('/fonts/Panton-BoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-BoldItalic.woff2') format('woff2'),
+    url('/fonts/Panton-BoldItalic.woff') format('woff'),
+    url('/fonts/Panton-BoldItalic.ttf') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-SemiBold.eot');
+    src: local('Panton SemiBold'), local('Panton-SemiBold'),
+    url('/fonts/Panton-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-SemiBold.woff2') format('woff2'),
+    url('/fonts/Panton-SemiBold.woff') format('woff'),
+    url('/fonts/Panton-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-ExtraBoldItalic.eot');
+    src: local('Panton ExtraBold Italic'), local('Panton-ExtraBoldItalic'),
+    url('/fonts/Panton-ExtraBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-ExtraBoldItalic.woff2') format('woff2'),
+    url('/fonts/Panton-ExtraBoldItalic.woff') format('woff'),
+    url('/fonts/Panton-ExtraBoldItalic.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-ExtraLightItalic.eot');
+    src: local('Panton ExtraLight Italic'), local('Panton-ExtraLightItalic'),
+    url('/fonts/Panton-ExtraLightItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-ExtraLightItalic.woff2') format('woff2'),
+    url('/fonts/Panton-ExtraLightItalic.woff') format('woff'),
+    url('/fonts/Panton-ExtraLightItalic.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-SemiBoldItalic.eot');
+    src: local('Panton SemiBold Italic'), local('Panton-SemiBoldItalic'),
+    url('/fonts/Panton-SemiBoldItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-SemiBoldItalic.woff2') format('woff2'),
+    url('/fonts/Panton-SemiBoldItalic.woff') format('woff'),
+    url('/fonts/Panton-SemiBoldItalic.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-Black.eot');
+    src: local('Panton Black'), local('Panton-Black'),
+    url('/fonts/Panton-Black.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-Black.woff2') format('woff2'),
+    url('/fonts/Panton-Black.woff') format('woff'),
+    url('/fonts/Panton-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-BlackItalic.eot');
+    src: local('Panton Black Italic'), local('Panton-BlackItalic'),
+    url('/fonts/Panton-BlackItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-BlackItalic.woff2') format('woff2'),
+    url('/fonts/Panton-BlackItalic.woff') format('woff'),
+    url('/fonts/Panton-BlackItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-Light.eot');
+    src: local('Panton Light'), local('Panton-Light'),
+    url('/fonts/Panton-Light.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-Light.woff2') format('woff2'),
+    url('/fonts/Panton-Light.woff') format('woff'),
+    url('/fonts/Panton-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-ExtraBold.eot');
+    src: local('Panton ExtraBold'), local('Panton-ExtraBold'),
+    url('/fonts/Panton-ExtraBold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-ExtraBold.woff2') format('woff2'),
+    url('/fonts/Panton-ExtraBold.woff') format('woff'),
+    url('/fonts/Panton-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-Bold.eot');
+    src: local('Panton Bold'), local('Panton-Bold'),
+    url('/fonts/Panton-Bold.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-Bold.woff2') format('woff2'),
+    url('/fonts/Panton-Bold.woff') format('woff'),
+    url('/fonts/Panton-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-Regular.eot');
+    src: local('Panton'), local('Panton-Regular'),
+    url('/fonts/Panton-Regular.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-Regular.woff2') format('woff2'),
+    url('/fonts/Panton-Regular.woff') format('woff'),
+    url('/fonts/Panton-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-Thin.eot');
+    src: local('Panton Thin'), local('Panton-Thin'),
+    url('/fonts/Panton-Thin.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-Thin.woff2') format('woff2'),
+    url('/fonts/Panton-Thin.woff') format('woff'),
+    url('/fonts/Panton-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-HeavyItalic.eot');
+    src: local('Panton Heavy Italic'), local('Panton-HeavyItalic'),
+    url('/fonts/Panton-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-HeavyItalic.woff2') format('woff2'),
+    url('/fonts/Panton-HeavyItalic.woff') format('woff'),
+    url('/fonts/Panton-HeavyItalic.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-LightItalic.eot');
+    src: local('Panton Light Italic'), local('Panton-LightItalic'),
+    url('/fonts/Panton-LightItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-LightItalic.woff2') format('woff2'),
+    url('/fonts/Panton-LightItalic.woff') format('woff'),
+    url('/fonts/Panton-LightItalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-ExtraLight.eot');
+    src: local('Panton ExtraLight'), local('Panton-ExtraLight'),
+    url('/fonts/Panton-ExtraLight.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-ExtraLight.woff2') format('woff2'),
+    url('/fonts/Panton-ExtraLight.woff') format('woff'),
+    url('/fonts/Panton-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-ThinItalic.eot');
+    src: local('Panton Thin Italic'), local('Panton-ThinItalic'),
+    url('/fonts/Panton-ThinItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-ThinItalic.woff2') format('woff2'),
+    url('/fonts/Panton-ThinItalic.woff') format('woff'),
+    url('/fonts/Panton-ThinItalic.ttf') format('truetype');
+    font-weight: 100;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-RegularItalic.eot');
+    src: local('Panton Regular Italic'), local('Panton-RegularItalic'),
+    url('/fonts/Panton-RegularItalic.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-RegularItalic.woff2') format('woff2'),
+    url('/fonts/Panton-RegularItalic.woff') format('woff'),
+    url('/fonts/Panton-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Panton';
+    src: url('/fonts/Panton-Heavy.eot');
+    src: local('Panton Heavy'), local('Panton-Heavy'),
+    url('/fonts/Panton-Heavy.eot?#iefix') format('embedded-opentype'),
+    url('/fonts/Panton-Heavy.woff2') format('woff2'),
+    url('/fonts/Panton-Heavy.woff') format('woff'),
+    url('/fonts/Panton-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    font-family: 'Panton', sans-serif;
+    font-weight: 400; /* Использует стиль Regular (если не указано иначе) */
+}
+
+button {
+    font-weight: 300;
+}
+
+h1 {
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 500; /* Использует стиль Black */
+    font-size: 7rem;
+    line-height: 1.1;
+}
+
+.price {
+    font-family: 'Neue Machina', sans-serif;
+}
+
+h2 {
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 400; /* Использует стиль Light */
+}
+
+strong {
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: bold; /* Использует стиль Bold */
+}
+
+em {
+    font-family: 'Neue Machina', sans-serif;
+    font-weight: 200; /* Использует стиль Ultralight */
+}
+
+:root {
+    --foreground-rgb: 0, 0, 0;
+    --background-start-rgb: 214, 219, 220;
+    --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --foreground-rgb: 255, 255, 255;
+        --background-start-rgb: 0, 0, 0;
+        --background-end-rgb: 0, 0, 0;
+    }
+}
+
+body {
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+            to bottom,
+            transparent,
+            rgb(var(--background-end-rgb))
+    ) rgb(var(--background-start-rgb));
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+    .text-balance {
+        text-wrap: balance;
+    }
+}
+
+#services {
+    background: url('/bg/background-uslugi.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .hexagon-container {
-  width: 120px;
-  height: 138px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+    width: 120px;
+    height: 138px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
 .hexagon {
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s;
-  max-width: 216px;
-  max-height: 247px;
-  height: 45vh;
-  width: 45vw;
-  margin: -16px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s;
+    max-width: 17.5rem;
+    max-height: 19.5rem;
+    height: 45vh;
+    width: 45vw;
+    margin: -15px;
 }
 
 .hexagon:hover {
-  background-color: #bef264;
+    background-color: #bef264;
 }
 
 .content {
-  position: relative;
-  z-index: 2;
-  color: black;
+    position: relative;
+    z-index: 2;
+    color: black;
 }
+
 .hexagon-grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  width: fit-content;
-  align-items: center;
-  justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: fit-content;
+    align-items: center;
+    justify-items: center;
+    transform: scale(1.5);
+    margin-top: 26rem;
+    padding-bottom: 10rem;
 }
+
 .clip-hex {
-  max-width: 215px;
-  max-height: 246px;
-  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-  margin: auto;
-  background: #AAFF00;
+    max-width: 17.5rem;
+    max-height: 19.5rem;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin: auto;
+    background: #AAFF00;
 }
 
 @media (min-width: 768px) {
-  .hexagon-grid .div2,
-  .hexagon-grid .div3,
-  .hexagon-grid .div4,
-  .hexagon-grid .div8{
-    background: #AAFF00;
-  }
-  .hexagon-grid .div1,
-  .hexagon-grid .div5,
-  .hexagon-grid .div6,
-  .hexagon-grid .div7{
-    background: black;
-  }
-  .hexagon-grid .div2 {
-    grid-column-start: 1;
-    grid-row-start: 2;
-  }
-  .hexagon-grid .div2 .clip-hex,
-  .hexagon-grid .div3 .clip-hex,
-  .hexagon-grid .div4 .clip-hex,
-  .hexagon-grid .div8 .clip-hex {
-    background: black;
-  }
-  .hexagon-grid .div2 div,
-  .hexagon-grid .div3 div,
-  .hexagon-grid .div4 div,
-  .hexagon-grid .div8 div {
-    color: #AAFF00;
-  }
+    .hexagon-grid .div2,
+    .hexagon-grid .div3,
+    .hexagon-grid .div4,
+    .hexagon-grid .div8 {
+        background: #AAFF00;
+    }
 
-  .hexagon-grid .div3 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 2;
-    grid-row-start: 1;
-  }
+    .hexagon-grid .div1,
+    .hexagon-grid .div5,
+    .hexagon-grid .div6,
+    .hexagon-grid .div7 {
+        background: black;
+    }
 
-  .hexagon-grid .div4 {
-    grid-column-start: 3;
-    grid-row-start: 1;
-  }
+    .hexagon-grid .div2 {
+        grid-column-start: 1;
+        grid-row-start: 2;
+    }
 
-  .hexagon-grid .div5 {
-    grid-column-start: 3;
-    grid-row-start: 2;
-  }
+    .hexagon-grid .div2 .clip-hex,
+    .hexagon-grid .div3 .clip-hex,
+    .hexagon-grid .div4 .clip-hex,
+    .hexagon-grid .div8 .clip-hex {
+        background: black;
+    }
 
-  .hexagon-grid .div6 {
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
-    grid-row-start: 1;
-  }
+    .hexagon-grid .div2 div,
+    .hexagon-grid .div3 div,
+    .hexagon-grid .div4 div,
+    .hexagon-grid .div8 div {
+        color: #AAFF00;
+    }
 
-  .hexagon-grid .div7 {
-    grid-column-start: 5;
-    grid-row-start: 1;
-  }
+    .hexagon-grid .div3 {
+        grid-row: span 2 / span 2;
+        grid-column-start: 2;
+        grid-row-start: 1;
+        margin: -30px;
+    }
 
-  .hexagon-grid .div8 {
-    grid-column-start: 5;
-  }
+    .hexagon-grid .div4 {
+        grid-column-start: 3;
+        grid-row-start: 1;
+    }
+
+    .hexagon-grid .div5 {
+        grid-column-start: 3;
+        grid-row-start: 2;
+    }
+
+    .hexagon-grid .div6 {
+        grid-row: span 2 / span 2;
+        grid-column-start: 4;
+        grid-row-start: 1;
+        margin: -30px;
+    }
+
+    .hexagon-grid .div7 {
+        grid-column-start: 5;
+        grid-row-start: 1;
+    }
+
+    .hexagon-grid .div8 {
+        grid-column-start: 5;
+    }
 }
 
-@media (max-width: 768px) {
-  .hexagon-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/*@media (max-width: 768px) {*/
+/*  .hexagon-grid {*/
+/*    grid-template-columns: repeat(2, 1fr);*/
+/*  }*/
+/*}*/
+/*  !* Контейнер для гексагональных карточек *!*/
+/*.hexagon-grid {*/
+/*  display: grid;*/
+/*  grid-template-columns: repeat(3, 150px); !* 3 колонки *!*/
+/*  grid-template-rows: repeat(2, 86px);    !* 2 ряда *!*/
+/*  gap: 15px;*/
+/*  justify-items: center;*/
+/*  position: relative;*/
+/*  margin-top: 30px;*/
+/*  margin-left: auto;*/
+/*  margin-right: auto;*/
+/*}*/
+
+/*!* Гексагональная карточка *!*/
+/*.hexagon-card {*/
+/*  width: 150px;   !* Ширина карточки *!*/
+/*  height: 86px;   !* Высота карточки *!*/
+/*  background-color: #48BB78; !* Зеленый фон *!*/
+/*  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); !* Шестиугольная форма *!*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  align-items: center;*/
+/*  justify-content: center;*/
+/*  text-align: center;*/
+/*  padding: 10px;*/
+/*  color: white;*/
+/*  font-weight: bold;*/
+/*}*/
+
+/*!* Заголовок *!*/
+/*.hexagon-card h3 {*/
+/*  font-size: 1.2rem;*/
+/*  color: white;*/
+/*}*/
+
+/*!* Описание *!*/
+/*.hexagon-card p {*/
+/*  font-size: 0.875rem;*/
+/*  color: white;*/
+/*}*/
+
+/*!* Адаптивность (для маленьких экранов) *!*/
+/*@media (max-width: 768px) {*/
+/*  .hexagon-grid {*/
+/*    grid-template-columns: repeat(2, 120px); !* 2 колонки на маленьких экранах *!*/
+/*  }*/
+
+/*  .hexagon-card {*/
+/*    width: 120px;*/
+/*    height: 69px;*/
+/*  }*/
+/*}*/
+
+/*!* Смещение второй строки для сот *!*/
+/*.hexagon-grid .hexagon-card:nth-child(2n) {*/
+/*  transform: translateX(75px); !* Смещаем четные карточки вправо *!*/
+/*}*/
